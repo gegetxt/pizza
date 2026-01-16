@@ -1,97 +1,771 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  font-family: "Barlow", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background-color: #faf7f2;
+  color: #292929;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  list-style: none;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-#app {
-  max-width: 1280px;
+.container {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding-inline: 20px;
+}
+
+/* HERO
+-------------------------------------------------- */
+
+.hero {
+  width: 100%;
+  min-height: 700px;
+  background: #ce2829 url("/assets/iteration-1/home-banner.png") no-repeat
+    center bottom;
+  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 80px 20px 160px;
+  position: relative;
+  color: #fff;
+}
+
+.hero-content {
+  max-width: 600px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.hero-logo {
+  font-family: "Londrina Solid", cursive;
+  font-size: 32px;
+  margin: 0 0 16px;
+  color: #ffffff;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.hero .sub {
+  font-family: "Satisfy", cursive;
+  font-size: 28px;
+  color: #fdc913;
+  margin: 0 0 8px;
 }
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+
+.hero .title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+  font-size: 56px;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 8px 0 24px;
+}
+
+.btn-yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 36px;
+  border-radius: 999px;
+  background: #fdc913;
+  color: #292929;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-yellow:hover {
+  filter: brightness(0.95);
+}
+
+/* HEADER (kategori şeridi)
+-------------------------------------------------- */
+
+.header {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 20px 0;
+  position: relative;
+  z-index: 20;
+}
+
+.header .nav-wrapper {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #292929;
+  white-space: nowrap;
+}
+
+.nav li img {
+  width: 32px;
+  min-width: 32px;
+  max-width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+/* PROMO BÖLÜMÜ*/
+
+.promo {
+  max-width: 1072px;
+  margin: 40px auto 40px;
+  padding-inline: 20px;
+  display: flex;
+  gap: 16px;
+}
+
+.big-promo {
+  flex: 0 0 52%;
+  background: #ce2829;
+  border-radius: 12px;
+  color: #ffffff;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.big-promo h3 {
+  font-family: "Quattrocento", serif;
+  font-size: 40px;
+  margin: 0 0 8px;
+}
+
+.big-promo p {
+  margin: 0 0 24px;
+  font-size: 18px;
+}
+
+.big-promo .promo-img {
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  width: 260px;
+}
+
+.promo-col {
+  flex: 0 0 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.promo-box {
+  border-radius: 12px;
+  padding: 28px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-box h3 {
+  font-size: 26px;
+  margin: 0 0 16px;
+}
+
+.promo-box.black {
+  background: #292929;
+  color: #ffffff;
+}
+
+.promo-box.yellow {
+  background: #ffeecc;
+  color: #d80027;
+}
+
+.promo-box .btn-white,
+.big-promo .btn-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #ce2829;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.promo-mid-img {
+  position: absolute;
+  right: 16px;
+  bottom: 10px;
+  width: 180px;
+}
+
+/* ORTA BAŞLIK
+-------------------------------------------------- */
+
+.section-title {
+  text-align: center;
+  margin: 40px auto 10px;
+  padding-inline: 20px;
+  max-width: 1072px;
+}
+
+.section-title .sub-title {
+  font-family: "Satisfy", cursive;
+  font-size: 28px;
+  color: #ce2829;
+  margin-bottom: 4px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* KATEGORİ BUTONLARI (Ramen, Pizza, Burger...)
+-------------------------------------------------- */
+
+#pills-tab {
+  max-width: 1200px;
+  margin: 30px auto 60px;
+  padding-inline: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+#pills-tab li {
+  list-style: none;
+}
+
+#pills-tab button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  font-family: "Barlow", sans-serif;
+  cursor: pointer;
+  color: #292929;
+}
+
+#pills-tab button img {
+  width: 38px;
+  height: 38px;
+}
+
+/* ÜRÜN KARTLARI
+-------------------------------------------------- */
+
+.cards {
+  max-width: 1072px;
+  margin: 0 auto 80px;
+  padding-inline: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
 }
 
 .card {
-  padding: 2em;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
 }
 
-.read-the-docs {
-  color: #888;
+.card-img {
+  border-radius: 12px;
+  object-fit: contain;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.card h3 {
+  font-size: 22px;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  color: rgba(27, 27, 27, 0.7);
+}
+
+.card-info .price {
+  font-weight: 700;
+  color: #292929;
+}
+
+/* FOOTER
+-------------------------------------------------- */
+
+.footer {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 60px 0 24px;
+}
+
+.footer-content {
+  max-width: 1066px;
+  margin: 0 auto;
+  padding-inline: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-logo {
+  font-family: "Londrina Solid", cursive;
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 0 0 24px;
+}
+
+.footer-menu h4,
+.footer-instagram h4 {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+
+.footer-menu ul li {
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.footer-info ul {
+  margin-top: 8px;
+}
+
+.footer-info ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-info ul li img {
+  width: 22px;
+  height: 22px;
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.insta-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 40px;
+  padding-top: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* TABLET (≤ 1024px)
+-------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 80px 20px 140px;
+    min-height: 620px;
   }
-  a:hover {
-    color: #747bff;
+
+  .hero .title {
+    font-size: 48px;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .promo {
+    flex-direction: column;
+  }
+
+  .big-promo,
+  .promo-col {
+    flex: 1 1 auto;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+}
+
+/* TABLET / KÜÇÜK EKRAN (≤ 768px)
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+  /* Hero */
+  .hero {
+    padding: 80px 16px 80px;
+    min-height: auto;
+    background-position: center top;
+  }
+
+  .hero-logo {
+    font-size: 26px;
+  }
+
+  .hero .title {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .hero .sub {
+    font-size: 24px;
+  }
+
+  .btn-yellow {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+
+    .header {
+    padding: 20px 0;
+    box-shadow: none;
+  }
+
+
+  .nav-wrapper {
+    padding: 0;
+  }
+
+  .nav {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    grid-template-rows: repeat(3, auto); 
+    gap: 20px 16px; 
+    justify-items: center;  
+    align-items: center;    
+    width: 100%;
+    padding: 24px 16px;
+  }
+
+  .nav li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav li img {
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    height: 40px !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    object-fit: contain !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  .nav li span {
+    flex-shrink: 0;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+
+  .nav li:nth-child(2) img,
+  .nav li:nth-child(3) img {
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    height: 40px !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    object-fit: contain !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .nav li:nth-child(2),
+  .nav li:nth-child(3) {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-left: -20px !important;
+  }
+
+
+  /* Promo */
+  .promo {
+    padding-inline: 16px;
+  }
+
+  .big-promo,
+  .promo-box {
+    padding: 20px;
+  }
+
+  .big-promo h3 {
+    font-size: 32px;
+  }
+
+  /* Section title */
+  .section-title {
+    padding-inline: 16px;
+    max-width: 1072px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+  /* Kategori butonları */
+  #pills-tab {
+    padding-inline: 16px;
+    gap: 16px;
+  }
+
+  #pills-tab li {
+    flex: 0 0 calc(50% - 6px); /* 2 kolon, gap dahil */
+  }
+
+  #pills-tab button {
+    padding: 10px 16px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  #pills-tab button img {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  /* Kartlar */
+  .cards {
+    grid-template-columns: 1fr;
+    padding-inline: 16px;
+    gap: 20px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    gap: 24px;
+  }
+
+  .footer-logo {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 70px 12px 60px;
+  }
+
+  .hero-logo {
+    font-size: 24px;
+  }
+
+  .hero .title {
+    font-size: 30px;
+  }
+
+  .hero .sub {
+    font-size: 20px;
+  }
+
+  .btn-yellow {
+    font-size: 15px;
+    padding: 10px 22px;
+  }
+    .header {
+    padding: 16px 0;
+  }
+
+   .nav-wrapper {
+    padding-inline: 16px;
+  }
+
+  .nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* yine 2x3, eşit genişlik */
+    gap: 16px 12px;
+    padding: 20px 0;
+    justify-items: center;
+  }
+
+  .nav li {
+    font-size: 14px;
+    justify-content: center; /* ikon + yazı birlikte ortalanır */
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav li img {
+    width: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    object-fit: contain !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  .nav li span {
+    flex-shrink: 0;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  /* Burger ve Pizza için özel düzenleme - 480px */
+  .nav li:nth-child(2) img,
+  .nav li:nth-child(3) img {
+    width: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    object-fit: contain !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .nav li:nth-child(2),
+  .nav li:nth-child(3) {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-left: -20px !important;
+  }
+
+  #pills-tab {
+    gap: 10px;
+  }
+
+  #pills-tab li {
+    flex: 0 0 calc(50% - 5px);
+  }
+
+  #pills-tab button {
+    font-size: 13px;
+    padding: 8px 14px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  #pills-tab button img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+
+
+  .big-promo {
+    padding: 24px 16px 120px;
+    text-align: left;
+  }
+
+  .big-promo h3 {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+
+  .big-promo p {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .big-promo .promo-img {
+    width: 180px;
+    bottom: -20px;
+    right: -10px;
+  }
+
+  .promo-box {
+    padding: 20px 16px 110px; 
+  }
+
+  .promo-box h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .promo-mid-img {
+    width: 150px;
+    right: -6px;
+    bottom: -10px;
   }
 }
